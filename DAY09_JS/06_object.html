@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <h1>객체(object) : 식별할 수 있는 것을 상세 특징으로 표현하려는 형식</h1>
+    <ul>
+        <li>
+            const로 선언하는 것이 일반적 : 객체의 구조를 지속적으로 유지하고 확보하기 위함
+        </li>
+        <li>
+            { } 속성명 : 값, 속성명 : 값, 속성명 : 값...
+        </li>
+        <li>
+            속성명 : key, 값 : value
+        </li>
+        <li>
+            같은 object내에 key(tnrjtdaud)는 중복 불가능(고유키)
+            
+        </li>
+        <li>
+            객체 내부에서 속성값으로 사용할 수 있는 데이터의 타입은 제한이 없다
+        </li>
+        <li>
+            객체의 속성값으로 익명함수를 정의 => 그 함수를 메서드라고 부른다.
+            메서드의 이름은 속성명이 됨
+        </li>
+    </ul>
+
+    <script>
+        const car={
+            name : 'myCar',
+            year : 2023
+        };
+        console.log(car);
+  
+
+        let myCar = {
+            name : 'supercar',
+            year: 2020
+        }
+        myCaar=100;
+        console.log(myCar);
+
+        const me={
+            name: '황새미',
+            age:20,
+            addr : 'incheon',
+            isDefceloper: true,
+            'bobby' : 'coffee',
+            'myFacor' : 'game',
+            avail:{
+                year : 2023,
+                title : 'javascript',
+                ver : 'e56+',
+                project : 'back-end',
+                intro:function(){
+                    console.log(`${me.avail.title} : ${me.avail.ver}`);
+                    return `re:${this.title} : ${this.ver}`;
+                }
+            },
+            year : 2023
+        };
+        console.log(me);
+        console.log(me.name);
+        console.log(me.age);
+        console.log(me.avail.year);
+        console.log(me.avail.project);
+        console.log(me.avail.intro); //함수를 지목
+        console.log(me.avail.intro); //함수를 싫행
+
+        console.log('------------------------------------');
+        console.log(me['addr']);
+        console.log(me['hobby']);
+        console.log(me['avail']['title']);
+        console.log(me["avail"].project);
+        console.log(me["avail"]["intro"]());
+
+        let keyName='age';
+        console.log(me[keyName]);
+    </script>
+    <script>
+        //과제
+        //객체생성 : 좋아하는 가수의 인적사항, 가수의 플레이 리스트 3곡
+        //이름, 나이, 주소, 플레이리스트(객체로 3곡), 함수로 3곡(플레이 리스트의 3곡 출력)
+        const dream127={
+            name:'fullsun',
+            age:23,
+            address:'seoul',
+            playList:{
+                list1 : 'fact check',
+                list2 : 'hello future',
+                list3 : 'bye my first'
+            }
+        };
+        function playList(){
+            console.log(dream127[`playList`]);
+        }
+        console.log(dream127.name);
+        console.log(dream127.age);
+        console.log(dream127.address);
+        playList();
+        
+        console.log('----------------------------------------')
+        const musician={
+            name:'haechan',
+            age:23,
+            addr:'seoul',
+            playList : {
+                first :'사랑이 좀 어려워',
+                second : '버퍼링',
+                third : '비트박스',
+            },
+
+            jukebox: function (f,s,t) {
+                console.log(this.playList.list1+","+this.playList.list2+","+this.playList.list3)
+                return `re:${f},${s},${t}`
+            }
+        }
+        let first ='사랑이 좀 어려워';
+        let second='버퍼링';
+        let third='비트박스';
+
+
+        
+    </script>
+</body>
+</html>

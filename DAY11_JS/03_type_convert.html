@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타입형변환</title>
+</head>
+<body>
+    <h1>
+        데이터 타입을 원하는 형식으로 변경(형변환, casting)
+    </h1>
+    <ul>
+        <li>
+            문자 => 숫자 : Number("String number value"),parseInt("1"), parseFloat("0.5")
+        </li>
+        <li>
+            숫자 => 문자 : 123.toString(), (123.12).toString()
+        </li>
+        <li>
+            문자 => boolean : Boolean("true")
+        </li>
+        <li>
+            boolean => string : String(true)
+        </li>
+        <li>
+            number => boolean : Boolean(number value), Boolean(1) => true Boolean(0) => false
+        </li>
+        <li>
+            boolean => number : Number(true), Number(false)
+        </li>
+    </ul>
+    <script>
+        console.log(String(true), typeof String(true));
+        console.log(Boolean(0), typeof Boolean(0));
+        console.log(Number(true), typeof Number(true)); //1 number
+        console.log(Number(false), typeof Number(false)); //0 number
+    </script>
+</body>
+</html>

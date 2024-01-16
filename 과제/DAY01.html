@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+</head>
+<body>
+    <h1>공지사항</h1>
+    <hr>
+    <p>
+        <form action="">
+            작성자 <input type="text" value="fullsun" readonly> <br>
+        <label for="title">
+            제목 <input type="text"> <input type="checkbox" name="t" id="title" value="공지"> 공지
+        </label> <br> <br>
+        <big>내용</big> <br> <textarea name="content" id="c" cols="30" rows="10"></textarea>
+        <hr>
+    </p>
+    <p>
+    <form action="">
+        파일첨부 <br> <br>
+        
+        <input type="text" disabled> <input type="file" name="upload" id="file1"> <br>
+        <input type="text" disabled> <input type="file" name="upload" id="file1"> <br>
+        <input type="text" disabled> <input type="file" name="upload" id="file1"> <br> <br>
+
+        - 파일의 확장자가 zip,pdf,hwp,doc,docx,txt,xls,xlsx,ppt,pptx,jpg,jpeg,gif,png,egg,dwg,max,psd,ai인 파일만 업로드하실 수 있습니다.(파일명은 특수문자 +,#,$ 등 &, 공백은 사용 금지!) <br>
+        - 파일 업로드 시, 첨부파일 1개당 200MB까지 가능합니다
+        <br>
+        <hr>
+
+    <input type="reset" value="취소">
+    <input type="submit" value="등록">
+    </form>
+    </p>    
+</body>
+</html>

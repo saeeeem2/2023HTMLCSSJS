@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나이 구하기</title>
+</head>
+<body>
+    이름 : <input type="text" id="name"><br>
+    주민번호 : <input type="text" id="rNum"><br>
+    <button type="button" onclick="info()">확인</button>
+
+    <h3 id="result">
+        <!-- 이름, 생년월일, 성별, 나이 출력 -->
+
+    </h3>
+    <script>
+        function info(){
+            //오늘 날짜 리턴
+            let now=new Date();
+
+
+            let name=document.getElementById(`name`).value;
+            let rNum=document.getElementById(`rNum`).value;
+            //생년월일
+            let birth=rNum.substring(0,rNum.lastIndexOf("-"));
+            console.log(birth);
+            //성별
+            let getNum=rNum.charAt(rNum.indexOf("-")+1);
+            let mw=(getNum=="1"||getNum=="3") ? "남" : "여";
+            console.log(mw);
+            //나이
+            //오늘 날짜 연도- 태어난 연도
+            let year=now.getFullYear();
+            let birthYear=Number(birth.substring(0,2));
+            let age=(getNum<=2)? year-(1900+birthYear) : year-(2000+birthYear);
+            console.log(age);
+            
+            document.getElementById(`result`).innerText=`이름 : ${name}, 생년월일 : ${birth}, 나이 : ${age}, 성별 : ${mw}`;
+        }
+    </script>
+</body>
+</html>

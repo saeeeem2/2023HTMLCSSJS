@@ -1,0 +1,106 @@
+body{
+    font-family: Do_hyeon;
+    /* 컨텐츠 보호를 위해 사용 */
+    min-width: 900px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.navbar{
+    height: 60px;
+    /* background-color: aqua; */
+    padding: 10px 30px;
+    /* display: flex; */
+    /* transform: translate(-50%, -50%); */
+    display: inline;
+    /* justify-content: space-between; */
+    
+}
+.navbar>a{
+    line-height: 60px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.navbar>ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+.navbar>ul>li{
+    margin: auto 10px;
+}
+.main-img{
+    width: 100%;
+    height: 350px;
+    background-image: url(../image/marvle.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin: 20px 0;
+}
+.container>h1{
+    font-size: 30px;
+    text-align: center;
+    margin: 50px auto;
+    color: rgb(54, 53, 53);
+}
+.product{
+    /* 그림사이즈 230 마진 20*/
+    /* 230*3+120 */
+    width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.product>a{
+    margin: 0 20px;
+}
+.product>a>img{
+    width: 230px;
+    height: 230px;
+}
+.product ul{
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.product ul li{
+    margin: 10px;
+    font-size: 20px;
+}
+.footer{
+    text-align: center;
+    margin: 30px auto 50px;
+}
+.footer>i{
+    font-size: 30px;
+    padding: 0 30px;
+}
+.product a{
+    position: relative;
+}
+.product .text{
+    position: absolute;
+    top: 200px;
+    left: 85px;
+    color: crimson;
+    /* 화면에서 사라짐 */
+    display: none;
+}
+.product>a>div>img:hover ~.text{
+    display: block;
+}
+.product>a>div>img:hover{
+    transform: scale(1.1);
+}
+.product>a>div>img{
+    transition: transform 0.3s;
+}
+.product>a>div{
+    width: 230px;
+    height: 230px;
+    overflow: hidden;
+}

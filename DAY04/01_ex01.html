@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경색, 배경이미지</title>
+    <style>
+        div.container{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border: 1px solid black;
+        }
+        .container>div:first-child{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(113, 183, 244);
+            color: white;
+            border: 1px solid black;
+        }
+        /* 두번째 div에 200*200 / bg-color와 투명도(rgba)  */
+        .container>div:nth-child(2){
+            width: 200px;
+            height: 200px;
+            /* background만 투명도 조정 */
+            background-color: rgba(255, 228, 196, 0.236);
+            /* 컨텐츠에도 투명도 영향을 줌 */
+            opacity: 0.5; 
+            border: 1px solid black;
+        }
+
+        /* 세번째 div에 300*300 / bg-image설정 */
+        .container>div:nth-child(3){
+            width: 300px;
+            height: 300px;
+            background-image: url(../image/5.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-color: aquamarine;
+            background-size: 100% 100%;
+            border: 1px solid black;
+        }
+
+        /* 네번째 div에 100*100 / bg-image 설정 */
+        .container>div:nth-child(4){
+            width: 100px;
+            height: 100px;
+            background-image: url(../image/7.jpg);
+            background-size: 100% 100%;
+            background-position: center center;
+
+        }
+        .container>:last-child{
+            border: 1px solid red;
+        }
+
+        /* 마지막 div의 첫번째 div에 300*70
+           마지막 div의 두번째 divdp 300*170 bg-image 추가 */
+        .container>div:last-child>div:first-child{
+            width: 300px;
+            height: 70px;
+            border: 1px solid black;
+            /* background-image: url(../image/1.jpg);
+            background-size: 100% 100%; */
+        }
+        .container>div:last-child>div:last-child{
+            width: 300px;
+            height: 170px;
+            background-image: url(../image/8.jpg);
+            background-size: 100% 100%;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+   <h1>여기에 제목이 들어옵니다.</h1> 
+   <div class="container">
+    <div>
+        여기에 메인 이미지
+        <img src="../image/9.jpg" alt="" width="50px" height="50px">
+    </div>
+    <div>
+        여기에 본문
+
+    </div>
+    <div>
+        여기에 본문 하단 이미지
+
+    </div>
+    <div>
+        여기에 내용추가
+
+    </div>
+    <div>
+        <div>
+            푸터내용
+
+        </div>
+        <div>
+            푸터내용
+
+        </div>
+    </div>
+   </div>
+</body>
+</html>

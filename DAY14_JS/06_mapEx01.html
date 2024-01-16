@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        input 2개 생성 => 과목, 점수
+        추가 => map에 추가
+        출력 => map을 출력 => ul/li로 추가해서 출력 (ex. html : 89)
+        결과 => 합계, 평균, 합격여부(60점 이상이면 합격) => h3
+     -->
+
+     <form action="">
+        과목 : <input type="text" id="subject"><br>
+        점수 : <input type="text" id="score"><br>
+        <button type="button" onclick="addSub()">추가</button>
+        <button type="button" onclick="printSub()">출력</button>
+        <button type="button" onclick="total()">결과</button>
+     </form>
+     <ul id="result"></ul>
+     <h3 id="tot"></h3>
+     <script>
+        const myMap=new Map();
+        function addSub(){
+            myMap.set(document.getElementById('subject').value,document.getElementById('score').value);
+            console.log(myMap);
+            document.getElementById('subject').value='';
+            document.getElementById('score').value='';
+        }
+        function printSub(){
+            for(const iter of myMap.entries()){
+                document.getElementById('result').innerHTML+=`<li>${iter[0]} : ${iter[1]}</li>`;
+            }
+        }
+        function total(){
+            let sum=0;
+            let str='';
+            for(const iter of myMap.entries()){
+                sum=sum+Number(iter[1]);
+                let avg=sum/myMap.size;
+                if(avg>=60){
+                    str='합격';
+                    document.getElementById('tot').innerText=`합계 : ${sum} / 평균 : ${avg} / 합격여부 : ${str}`;
+                } else {
+                    str='불합격';
+                    document.getElementById('tot').innerText=`합계 : ${sum} / 평균 : ${avg} / 합격여부 : ${str}`;
+                }
+            }
+
+        }
+     </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+</head>
+<body>
+    <h1>
+        구구단 영역(2*1=2~9*9=81)내에서 랜덤으로 문제를 내면 정답을 맞추는 로직
+    </h1>
+    <ul>
+        <li>
+            총 무네는 10문제 출제
+        </li>
+        <li>
+            문제를 풀 때 정답, 오답의 결과를 나타냄
+        </li>
+        <li>
+            총 10개의 문제 중 정답률 출력
+        </li>
+    </ul>
+    <button type="button" onclick="gugudan()">문제 출제</button>
+    <h3 id="gugu"></h3>
+    <button type="button" onclick="check()">정답 확인</button>
+    <h3 id="result"></h3>
+
+    <script>
+        let answer=true;
+        let ans=new Array();
+        function gugudan(){
+            answer=true;
+            document.getElementById('gugu').innerHTML='';
+            for(let i=1; i<=10; i++){
+                let num=Math.floor(Math.random()*8)+2;
+                let num2=Math.floor(Math.random()*9)+1;
+                document.getElementById('gugu').innerHTML+=`${i}. ${num}*${num2} = <input type="text" id="userAns${i}"><br>`;
+                ans[i-1]=num*num2;
+            } 
+        }
+        function check(){
+            if(answer){
+                answer=false;
+                let pass=0;
+                let fail=0;
+                for(let i=1; i<=10; i++){
+                    const userAns=document.getElementById(`userAns${i}`);
+                    if(ans[i-1]==userAns.value){
+                        pass++;
+                        document.getElementById(`userAns${i}`).value+=`  정답 `;
+                        document.getElementById(`userAns${i}`).style.backgroundColor='green';
+                    } else {
+                        fail++;
+                        document.getElementById(`userAns${i}`).value+=`  오답 `;
+                        document.getElementById(`userAns${i}`).style.backgroundColor='red';
+                    }
+                }
+                document.getElementById('result').innerText=`정답률 : ${(pass/(fail+pass)*100)}%`;
+            }
+        }
+
+    </script>
+
+</body>
+</html>

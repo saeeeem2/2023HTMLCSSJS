@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+    <style>
+        @font-face {
+            font-family: Black_Han_Sans;
+            src: url(../font/Black_Han_Sans/BlackHanSans-Regular.ttf);
+        }
+        @font-face {
+            font-family: Nanum_Pen_Script;
+            src: url(../font/Nanum_Pen_Script/NanumPenScript-Regular.ttf);
+        }
+        @font-face {
+            font-family: Do_Hyeon;
+            src: url(../font/Do_Hyeon/DoHyeon-Regular.ttf);
+        }
+        body{
+            background-image: url(../image/배경2.jpg);
+            background-position: center;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        .button{
+            width: 100px;
+            height: 50px;
+            border: 2px solid green;
+            justify-content:center ;
+            align-items: center;
+            
+        }
+        .button:hover{
+            background-color: rgb(218, 247, 210);
+        }
+        .button>a{
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            line-height: 50px;
+        }
+        .title>p{
+            font-family: Do_Hyeon;
+            text-align: center;
+            color: white;
+            font-size: 50px;
+            
+        }
+        .header>a{
+            font-family: Do_Hyeon;
+            color: white;
+            font-size: 15px;
+            text-decoration: none;
+        }
+        .design{
+            float: left;
+        }
+        .home, .login, .signup, .board{
+            float: right;
+        }
+    
+    </style>
+</head>
+<body>
+    <header>
+        <div class="left">
+            <a href="#" class="design">DESIGN</a>
+        </div>
+        <div class="right">
+            <a href="#" class="home"> HOME</a>
+            <a href="#" class="login">LOGIN</a>
+            <a href="#" class="signup">SIGNUP</a>
+            <a href="#" class="board">BOARD</a>
+        </div>
+    </header>
+        <div class="box">
+            <div class="title">
+                <p>Welcome to Front-End World</p>
+            </div>
+            <div class="button">
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+
+
+</body>
+</html>

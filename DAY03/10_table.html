@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 속성</title>
+    <style>
+        table{
+            /* border: 1px solid black; */
+            /* 테이블의 선을 한 줄로 만들기 */
+            border-collapse: collapse;
+            /* width: 50%; */
+        }
+        th,td{
+            border: 1px solid black;
+            text-align: center;
+        }
+        /* th{
+            background-color: aqua;
+        } */
+        thead{
+            background-color: rgb(7, 140, 140);
+        }
+        /* tbody의 짝수 요소만 색바꾸기 */
+        tbody>tr:nth-child(even){
+            background-color: rgb(238, 255, 164);
+        }
+        /* tr에 마우스를 올리면 색 변경 */
+        tbody>tr:hover{
+            background-color: rgb(70, 89, 124);
+            color: white;
+        }
+        .w20{
+            width: 20%;
+        }
+        .w50{
+            width: 50%;
+        }
+        .w30{
+            width: 30%;
+        }
+  
+
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+             <th>번호</th>
+             <th>이름</th>
+             <th>점수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="w20">1</td>
+                <td class="250">이동혁</td>
+                <td class="w30">100</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>이해찬</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>이민형</td>
+                <td>95</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>나재민</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>김정우</td>
+                <td>70</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <td colspan="2">합계</td>
+            <td>???</td>
+        </tfoot>
+    </table>
+</body>
+</html>

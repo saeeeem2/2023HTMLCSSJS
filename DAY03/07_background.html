@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경속성</title>
+    <!-- 
+        배경속성(background)
+        - 배경색 : background-color
+        - 배경이미지 :background-image
+        - 배경색과 배경이미지를 둘다 지정하면 배경이미지가 우선 출력
+        - 배경이미지가 출력되지 않는 부분이 있다면 배경색으로 출력
+        - 배경이미지 크지 : background-size 가로*세로
+        - 배경이미지 반복 : background-repeat
+            - no-repeat : 반복 안 함
+            - repeat-x : x축으로만 반복
+            - repeat-y : y축으로만 반복
+            - round : 양쪽반복(기본)
+        - 배경이미지 위치 : backgroud-position
+            - center : 가운데
+            - x,y 축으로값을 주면됨
+        background: color image position size repeat 순으로 입력
+     -->
+     <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(203, 203, 254);
+            /* border: 1px solid black; */
+            background-image: url(../image/5.jpg);
+            background-size: 270px 270px;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 5px 5px 5px gray;
+        }
+        .box2{
+            width: 300px;
+            height: 300px;
+            background-image: url(../image/5.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 5px 5px 5px gray;
+        }
+     </style>
+</head>
+<body>
+    <!-- box2생성 후 가로세로 300px생성 배경이미지/ 박스 크기에 꽉 차도록 설정 -->
+    <div class="box"></div>
+    <div class="box2"></div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ani{
+            bottom: 0px;
+            position: absolute;
+            animation-name: move;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes move {
+            0%{
+                bottom: 0px;
+            }
+            25%{
+                bottom: 20px;
+            }
+            50%{
+                bottom: 0px;
+            }
+            75%{
+                bottom: 40px;
+            }
+            100%{
+                bottom: 0px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="ani">hello fullsun~</div>
+</body>
+</html>

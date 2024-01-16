@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <!-- eval() : 보안에 취약하므로 사용을 비권장함. 이 함수 쓰지 않고 만들기 -->
+</head>
+<body>
+    <div class="container">
+        <div class="area top">
+            <button type="button" value="7">7</button>
+            <button type="button" value="8">8</button>
+            <button type="button" value="9">9</button>
+            <button type="button" value="+" >+</button>
+            <button type="button" value="c" onclick="clearCalc()">c</button><br>
+            <button type="button" value="4">4</button>
+            <button type="button" value="5">5</button>
+            <button type="button" value="6">6</button>
+            <button type="button" value="-">-</button><br>
+            <button type="button" value="1">1</button>
+            <button type="button" value="2">2</button>
+            <button type="button" value="3">3</button>
+            <button type="button" value="*">*</button><br>
+            <button type="button" value=".">.</button>
+            <button type="button" value="0">0</button>
+            <button type="button" value="=">=</button>
+            <button type="button" value="/">/</button>
+       </div>
+            <h1 id="printResult"></h1>
+    </div>
+    <script>
+        document.querySelector('.container').addEventListener('click',(e)=>{
+            console.log(e.target.value);
+        })
+        let num=e.target.value;
+
+        function calc(){
+            if(choice)
+        }
+        
+        function plus(){
+            document.getElementById('printResult').innerText=e.
+        }
+        function clearCalc(){
+            document.getElementById('printResult').innerText='';
+        }
+    </script>
+</body>
+</html>

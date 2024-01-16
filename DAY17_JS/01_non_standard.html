@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비표준 속성</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>
+        비표준 속성(non-standard Attribute)
+    </h1>
+    <ul>
+        <li>
+            html 태그의 속성이 제한적이므로 데이터를 관리하는 차원에서 개발자들에게 직접 속성을 만들어 사용할 수 있는 방법을 제공
+        </li>
+        <li>
+            MarkUp 언어들은 사용자(개발자)들에게 표준이 아닌 사용자만의 문법을 사용할 수 있도록 설계되어 있음
+        </li>
+        <li>
+            너무 과도하게 사용하면 개발 효율과 가독성 저하(적당히 사용하는 게 좋음)
+        </li>
+        <li>
+            태그 속성의 이름을 data-변수명="${value}" 하이픈 뒤에 변수명을 사용하여 value값을 인식할 수 있도록 설계되어 있음
+        </li>
+        <li>
+            dataset.변수명 값이 리턴됨
+            dataset property를 사용하여 읽어들임
+        </li>
+        <li class="list" data-ino="li_list" data-item="listItem">
+            변수명에 대문자는 허용하지 않음 : 대문자를 사용하더라도 소문자로 자동 변환해서 인식
+        </li>
+    </ul>
+    <script>
+        let li_last_tag=document.querySelectorAll('.list');
+        console.log(li_last_tag);
+        // console.log(li_last_tag.dataset.ino); //번지수없어서 오류
+        console.log(li_last_tag[0].dataset.ino);
+
+        let li_list=li_last_tag[0].dataset.ino;
+        // console.log(li_last_tag[0].dataset.iteM);//대문자 인식 못함
+        console.log(li_last_tag[0].dataset.item);
+    </script>
+</body>
+</html>

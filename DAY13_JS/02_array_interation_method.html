@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 순환 탐색 메서드</title>
+</head>
+<body>
+    <h1>
+        배열의 순환할 수 있는 구조를 이용하여 사용하는 메서드
+    </h1>
+    <ul>
+        <li>
+            array.reduce(callvack function(total, calue, index, self),[init value]);
+            연산의 누적 값을 리턴
+        </li>
+        <li>
+            array.reduceRight() : 배열의 우측에서 좌측방향으로 대입
+        </li>
+        <li>
+            array.every(callvack function(value, index, self)) : 콜백함수의 리턴 조건에 모든 배열의 값이 만족하면 true, 아니면 false 
+        </li>
+        <li>
+            array.some(callvack function(value, index, self)) : 콜백함수의 리턴 조건에 배열의 값이 만족하면 true, 아니면 false (하나라도 만족하면)
+        </li>
+        <li>
+            array.indexOf('str',[start index]) : 해당 문자열이 존재하는 배열의 index를 리턴
+        </li>
+        <li>
+            array.lastIndexOf('str',[start index]) : 뒤에서부터 탐색
+        </li>
+        <li>
+            array.find(callback function(value,index,self)) : 검색 조건에 만족하는 첫 번째 배열 값 리턴
+        </li>
+        <li>
+            array.findIndex(callback function(value, index, self)) : 검색 조건에 만족하는 첫 번째 배열 인덱스 리턴
+        </li>
+        <li>
+            array.from('객체') : 순서가 있거나, 순호나 구조를 갖고 있는 객체를 배열로 변환
+        </li>
+        <li>
+            array.keys() : 배열이 사용 중인 key(식별자, index)를 검색하여 새로운 배열로 리턴
+            => Object는 적용 안 됨
+        </li>
+        <li>
+            array.entries() : index:value 의 구조값을 만들어 새로운 배열에 담아 리턴
+        </li>
+        <li>
+            array.includes('찾고싶은 값') : 배열에 찾는 값이 있으면 true, 없으면 false
+        </li>
+    </ul>
+    <script>
+        const fruits=['apple','orange','apple','mango'];
+        //fruits의 3번째 위치한 apple의 l을 추출
+        let keyword='l';
+        //3번째 위치에 있는 apple추출
+        let key=fruits[fruits.indexOf('apple',1)].indexOf("l");
+        //apple의 l을 추출
+        console.log(key);
+
+        const f=fruits.entries();
+        console.log(f);
+        for(const g of f){
+            console.log(g);
+        }
+
+        const arr=[1,12,3,4,45];
+        const sum=arr.reduce(function(total, value){
+            return total+value;
+        },100);
+        console.log(sum);
+
+        const fi=arr.find((e)=>{
+           return e>10; 
+        })
+        console.log(fi);
+
+        const fi2=arr.find(function(e){
+            return e>20;
+        })
+        console.log(fi2);
+
+        const even=arr.every((e)=>{
+            return e%2==0;
+        })
+        console.log(even);
+
+        const even2=arr.every((e) => e%3==0);
+        console.log(even2);
+    </script>
+</body>
+</html>

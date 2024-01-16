@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        selector 기타 여러가지 선택자들
+        - :first-child : 첫번째 요소
+        - :last-child : 마지막 요소
+        - :nth-child(a) : a번째요소(계산가능)
+        - :nth-of-child(a) : 같은 타입의 a번째 요소
+
+        - :after : ~뒤에 가상 요소를 삽입
+        - :before : ~전에 가상 요소를 삽입
+
+        - a tag는 해당 링크 클릭여부에 따라 글꼴색이 변경되는 태그
+        - 기존 a태그의 배경색이 설정되어 있어야만 적용가능
+         => a:active(클릭할 때) a:visited(링크 클릭 후 색상)
+            a:link(링크 클릭 전)
+     --> 
+     <style>
+        a{
+            color: black;
+
+            /* a태그의 밑줄 삭제 */
+            text-decoration: none;
+        }
+        a:link{
+            color: black;
+        }
+        a:active{
+            color: rgb(55, 107, 3);
+        }
+        a:visited{
+            color: rgb(42, 124, 248);
+        }
+        ol li:first-child{
+            color: brown;
+        }
+        ol li:last-child{
+            color: crimson;
+        }
+        ol li::after{
+            content: " 번째";
+        }
+        li.links a::after{
+            content: " |";
+        }
+        /* li.links a::after{
+            content: "(으)로 이동";
+        } */
+        ul li a.last::after{
+            content: "";
+        }
+        li::before{
+            content: "li태그 ";
+        }
+       
+     </style>
+</head>
+<body>
+    <!-- 네이버, 구글, 다음으로 연결하는 링크를 작성 -->
+    <ul>
+        <li class="links">
+            <a href="http://naver.com">네이버</a>
+            <a href="http://naver.com">네이버2</a>
+            <a href="http://naver.com" class="last">네이버2</a>
+        </li>
+        <li class="links">
+            <a href="http://google.com">구글</a>
+            <a href="http://google.com">구글</a>
+            <a href="http://google.com">구글</a>
+            <a href="http://google.com" class="last">구글</a>
+        </li>
+        <li class="links">
+            <a href="http://daum.net" class="last">다음</a>
+        </li>
+    </ul>
+
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ol>
+    
+</body>
+</html>

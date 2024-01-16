@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        select 태그 : 제시된 항목 중 하나를 선택하게 하는 태그
+                      콤보박스/드롭다운박스 비슷한 형태
+                      option태그를 넣어서 목록을 구성
+                      option value="전송값"
+                      value 값이 없으면 공백으로 전송
+                      selected : 기본 선택값을 결정
+                      disabled : 비활성화
+     -->
+     <form action="">
+        <select name="year" id="">
+            <option value="">출생년도</option>
+            <option value="2001">2001</option>
+            <option value="2000" selected>2000</option>
+            <option value="1999">1999</option>
+            <option value="1998">1998</option>
+            <option value="1997">1997</option>
+            <option value="1996">1996</option>
+            <option value="1995" disabled>1995</option>
+        </select>
+        <button>submit</button>
+     </form>
+     <!-- 통신사 선택 목록 생성 -->
+     <form action="">
+        <label for="cp">통신사를 선택해주세요.</label>
+        <select name="company" id="">
+            <option value="">통신사</option>
+            <option value="SKT">SKT</option>
+            <option value="KT">KT</option>
+            <option value="LG">LG</option>
+            <option value="알뜰폰">알뜰폰</option>
+        </select>
+        <button>submit</button>
+     </form>
+</body>
+</html>

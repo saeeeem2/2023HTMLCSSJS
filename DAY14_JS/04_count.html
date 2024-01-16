@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count 만들기</title>
+</head>
+<body>
+    <!-- 
+        button 2개를 준비 +/-
+        + => 값이 1씩 증가
+        - => 값이 1씩 감소 (값이 0이면 더이상 감소하지 않게)
+     -->
+     <h1 id="number">0</h1>
+     <div>
+        <button type="button" onclick="plus()" id="incre">+</button>
+        <button type="button" onclick="minus()" id="decre">-</button>
+     </div>
+     <script>
+        // let num=0;
+        // function plus(){
+        //     num++;
+        //     document.getElementById('number').innerText=`${num}`;
+        // }
+        // function minus(){
+        //     if(num==0){
+        //         document.getElementById('number').innerText=`더이상 감소할 수 없습니다.`;
+        //     } else{
+        //         num--;
+        //         document.getElementById('number').innerText=`${num}`;
+        //     }
+        // }
+
+        const number=document.getElementById('number');
+        const incre=document.getElementById('incre');
+        const decre=document.getElementById('decre');
+
+        incre.addEventListener('click',()=>{
+            let currVal=Number(number.innerText);
+            console.log(currVal);
+            number.innerText=currVal+1;
+        });
+        decre.addEventListener('click',()=>{
+            let currVal=Number(number.innerText);
+            console.log(currVal);
+            if(currVal <=0){
+                number.innerText=0;
+            }else{
+                number.innerText=currVal-1;
+            }
+        });
+
+     </script>
+</body>
+</html>

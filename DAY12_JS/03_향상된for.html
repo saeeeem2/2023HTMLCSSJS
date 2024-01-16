@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>향상된 for문</title>
+    <style>
+        table, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        table>tbody>tr>td{
+            width: 100px;
+            height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        향상된 for
+    </h1>
+    <ul>
+        <li>
+            for of : 배열안의 내용을 탐색할 때 사용 []
+            for(let value of Array){
+                code;
+            }
+        </li>
+        <li>
+            for in : 객체 안의 내용을 탐색할 때 사용 {}
+            for(let value in Object){
+                code;
+            }
+        </li>
+    </ul>
+
+    <h1>
+        구구단 2~9단까지 출력
+    </h1>
+    <button type="button" onclick="gugu()">구구단 출력</button>
+    <div id="gugu">
+        <!-- 
+            테이블 추가
+            2*1=2   3*1=3 ... 9*1=9
+            2*2=4   
+            ...
+            incre = 1인 경우 tr 하나 생성
+            안에서 for dan 2~9까지 반복 td생성
+            incre = 2인 경우 tr 하나 생성
+         -->
+         
+
+         </table>
+    </div>
+    <script>
+        function gugu(){
+            let gugu=document.getElementById('gugu');
+            let incre=1;
+            let str="<table>";
+            while(incre<10){
+                let dan=2; //2~9까지만 증가
+                str+="<tr>";
+                    while(dan<10){
+                        str+=`<td>${dan}*${incre}=${dan*incre}</td>`;
+                        dan++;
+                    }
+                    incre++;
+                    str+="</tr>";
+            }
+            str+="</table>";
+            gugu.innerHTML=str;
+
+        }
+        
+    </script>
+</body>
+</html>

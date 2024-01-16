@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        색상관련 속성
+        color : 글자색
+        background-color : 배경색
+        border-color : 테두리 색
+        색지정방법
+        - 이미 지정된 이름을 사용하는 경우 : red, blue, green
+        - 색상코드를 사용하는 방법 : 16진수 코드 
+        - rgb코드를 사용하는 방법 : rgb(255,0,0);
+        - rgba코드를 사용하는 방법 : 기본 rgb코드에 a(투명도) 추가
+        - a의 투명도 0~1까지 
+     -->
+     <style>
+        div{
+            font-size: 200;
+            font-weight: 700;
+        }
+        .color{
+            color: chartreuse;
+        }
+        .bgcolor{
+            background-color: cadetblue;
+        }
+        .border{
+            /* 보더 지정시 두께, 스타일, 색을 한번에 지정 */
+            border: 1px solid black;
+            /* border-style: solid;
+            border-width: 1px; */
+            border-color: blueviolet;
+        }
+        p{
+            font-size: 20px;
+        }
+        /* nth-child(모든요소)
+           nth-of-type() : 해당 타입만 순번 */
+        p:nth-of-type(odd){
+            color: blue;
+        }
+     </style>
+</head>
+<body>
+     <div class="color">안녕하세요(글자색)</div>
+     <div class="bgcolor">안녕하세요(배경색)</div>
+     <div class="border">안녕하세요(테두리색)</div>
+     
+     <!-- p태그 3개 생성 -->
+     <!-- 1,3번 p태그에 폰트색상 파랑 설정 -->
+     <!-- 모든 태그에 폰트사이즈 20px -->
+     <p class="1">이해찬</p>
+     <p class="2">이동혁</p>
+     <p class="3">안재용</p>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: Black_Han_Sans;
+            src: url(../font/Black_Han_Sans/BlackHanSans-Regular.ttf);
+        }
+        @font-face {
+            font-family: Nanum_Pen_Script;
+            src: url(../font/Nanum_Pen_Script/NanumPenScript-Regular.ttf);
+        }
+        @font-face {
+            font-family: Do_Hyeon;
+            src: url(../font/Do_Hyeon/DoHyeon-Regular.ttf);
+        }
+        body{
+            width: 800px;
+            margin: 0 auto;
+        }
+        h1,h2{
+            font-family: Do_hyeon;
+        }
+        header{
+            text-align: center;
+        }
+        section{
+            text-align: center;
+        }
+        section article{
+            width:calc(100% / 3);
+            float: left;
+        }
+        section ul{
+            margin-top: 0;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <section></section>
+
+    <script>
+        //데이터 가져오기
+        fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+            .then(resp=>resp.json())
+            .then(result=>showHero(result)) 
+        
+        let header=document.querySelector('header');
+        let section=document.querySelector('section');
+
+        //뿌리기
+        function showHero(jsonObj){
+            console.log(jsonObj);
+            let str='';
+            str+=`<h1>${jsonObj.squadName}</h1>`;
+            str+=`<p>Hometown : ${jsonObj.homeTown}//Formed :${jsonObj.formed} </p>`;
+
+            header.innerHTML=str;
+
+            let sectionStr='';
+            //section데이터
+            for(const member of jsonObj.members){
+                sectionStr+=`<article>`;
+                    sectionStr+=`<h2>${member.name}</h2>`;
+                    sectionStr+=`<p>Secret identity : ${member.secretIdentity}</p>`;
+                    sectionStr+=`<p>Age : ${member.age}</p>`;
+                    sectionStr+=`<p>Superpowers : </p>`;
+                    sectionStr+=`<ul>`;
+                    for(const power of member.powers){
+                        sectionStr+=`<li>${power}</li>`;
+                    }
+                sectionStr+=`</ul></article>`;
+            }
+            section.innerHTML=sectionStr;
+        }
+    </script>
+</body>
+</html>

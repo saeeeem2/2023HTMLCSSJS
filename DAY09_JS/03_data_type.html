@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>변수나 상수에 할당할 수 있는 값의 종류</h1>
+    <ul>
+        <li>
+            숫자 : Number => 정수, 실수, NaN(notㅁ Number : 숫자가 아님)
+        </li>
+        <li>
+            문자 : String= "", '',`` 감싼 값들
+        </li>
+        <li>
+            불리언 : Boolean => true / false
+        </li>
+        <li>
+            객체 : Object => 1개 이상의 데이터가 특정한 구조를 가지고 있는 형태
+            {키 : 값}({ } : 아무것도 없는 사실도 1개의 객체로 취급)
+        </li>
+        <li>
+            배열 : Array => [1,2,3,...] 형태의 데이터 집합
+            (순서, 길이가 있음)
+        </li>
+        <li>
+            알수없는 값 : null => 뭔가 있는 것 같긴한데 파악되지는 않은 값
+        </li>
+        <li>
+             미지정된 값 : undefined => 값이 할당되지 않음
+        </li>
+        <li>
+            데이터의 타입을 확인하는 명령어 : typeof 변수
+        </li>
+    </ul>
+
+    <script>
+        let num=123456;
+        let str='문자';
+        let bool = true;
+        let obj = {name:'hong'}; //obj.name
+        let obj2 = new Object(); //자바 스크립트에서 제공하는 내장객체
+        let arr=[1,2,hong];
+        let arr2=new Array();//arr 객체
+        let undi=nudefined;
+        let ne=null;
+        let nudi2;
+
+        console.log(`num:${num} / ${typeof num}`)
+        console.log(`str:${str} / ${typeof str}`)
+        console.log(`bool:${bool} / ${typeof bool}`)
+        console.log(`obj:${obj.name} / ${typeof obj}`)  // 출력 키를 설정하지 않으면 객체 자체 출력
+        console.log(`obj2:${obj2} / ${typeof obj2}`)
+        console.log(`arr:${arr} / ${typeof arr}`)
+        console.log(`arr2:${arr2} / ${typeof arr2}`)
+        console.log(`nudi:${undi} / ${typeof undi}`)
+        console.log(`ne:${ne} / ${typeof ne}`)
+        console.log(`undi2:${undi2} / ${typeof undi2}`)
+    </script>
+    <h1>변수의 관리</h1>
+    <ol>
+        <li>
+            기본자료형 : 값이 메모리의 주소값이 가르키는 곳에 직접 할당되는 값
+            number, boolean, string(참조형이지만 사용편의상 기본자료형과 같이 사용)
+        </li>
+        <li>
+            참조자료형 : 값이 저장되어 있는 주소를 할당
+            string, object, array, function, null, undefined
+        </li>
+        <li>
+            == 같다(값만 비교) / !=같지 않다
+            ===같다(값과 타입이 같은지 비교)
+            !==같지 않다(값과 타입이 같지 않은지 비교)
+        </li>
+    </ol>
+    <script>
+        let num1=10;
+        let num2='10';
+        console.log('num1'+typeof num1);
+        console.log(num2+typeof num2);
+        if(num1==num2){
+            console.log("true");
+        } else{
+            console.log('false');
+        }
+
+    </script>
+</body>
+</html>

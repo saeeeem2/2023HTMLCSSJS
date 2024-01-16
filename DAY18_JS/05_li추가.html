@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btn1">li 한 번에 추가</button>
+    <button type="button" id="btn2">li 하나씩 추가</button>
+    <button type="button" id="btn3">li 한 번에 추가</button>
+    <button type="button" id="btn4">li 하나씩 추가</button>
+    <ul id="ul"></ul>
+    <hr>
+    <ol id="ol"></ol>
+    <hr>
+    <ul id="ul2"></ul>
+    <hr>
+    <ol id="ol2"></ol>
+    <hr>
+
+    <script>
+        //html, css, javascript, sql
+        const arr=['html', 'css', 'javascript', 'sql'];
+        document.getElementById('btn1').addEventListener('click',()=>{
+        //     for(let i=0; i<arr.length; i++){
+        //         document.getElementById('ul').innerHTML+=`<li>${arr[i]}</li>`;
+        //     }
+
+        let str="";
+        arr.forEach((elem)=>{
+            str+=`<li>${elem}</li>`;
+        });
+            document.getElementById('ul').innerHTML+=str;
+        })
+
+        let idx=0;
+        document.getElementById('btn2').addEventListener('click',()=>{
+          if(idx<arr.length){
+            let str=`<li>${arr[idx]}</li>`;
+            document.getElementById('ol').innerHTML+=str;
+            idx++;
+          }
+          })
+
+
+        //createElement : element를 생성
+        //appendChild : 다른 엘리먼트의 자식으로 추가
+        document.getElementById('btn3').addEventListener('click',()=>{
+            let ul2=document.getElementById('ul2');
+            arr.forEach((elem)=>{
+                let li=document.createElement('li'); //<li></li> 한 번에 생성
+                li.innerText=elem; //<li>HTML</li>
+                ul2.appendChild(li); //<ul><li>HTML</li></ul>
+            })
+        })
+
+        let cnt=0;
+        document.getElementById('btn4').addEventListener('click',()=>{
+            let ol2=document.getElementById('ol2');
+            if(cnt<arr.length){
+                let li=document.createElement('li');
+                li.innerText=arr[cnt];
+                ol2.appendChild(li);
+                cnt++;
+            }
+        })
+        
+    </script>
+</body>
+</html>

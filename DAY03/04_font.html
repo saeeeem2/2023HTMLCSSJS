@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font 속성</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <!-- 
+        폰트 속성
+        font-size : 크기
+        font-weigth : 굵기 100~900까지 100단위로 지정
+        font-style : 기울림꼴
+        font-family : 글꼴
+         - 지정하려는 폰트를 ,로 나열
+         - 한글폰트의 경우 한글이름, 영문이름을 같이 지정
+         - 기본폰트,다른폰트,기본형
+         - 마지막은 기본형 폰트를 지정
+         - 폰트명은 "" 없이 사용가능
+         - 폰트명에 띄어쓰기를 포함하고 있다면 ""반드시 넣어주어야 함("맑은 고딕", "Malgum Gothic", 굴림, "Gulim" selif(기본))
+        font : 폰트 속성을 한 번에 적용
+        font : (font-style font weight) font-size font-family
+                => (font-style font weight)는 생략 가능
+     -->
+     <style>
+        .font{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            /* font-style: italic;
+            font-weight: 700px;
+            font: 700 20px "맑은 고딕", "Malgun Gothic", serif; */
+        }
+     </style>
+</head>
+<body>
+    <div class="font">안녕하세요~</div>
+</body>
+</html>

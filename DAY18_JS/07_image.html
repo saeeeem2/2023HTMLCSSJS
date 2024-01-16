@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            border: 5px solid black;
+            width: 200px;
+            height: 50px;
+            margin: 0 auto;
+        }
+        ul{
+            list-style: none;
+            width: 300px;
+            margin: 20px auto;
+            padding: 0;
+        }
+        li{
+            display: inline;
+            margin: 0 10px;
+        }
+        img{
+            margin-top: 30px;
+            width: 50%;
+        }
+        a:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Travel</h1>
+    <ul>
+        <li><a id="home" onclick="clickCity(this)">Home</a></li>
+        <li><a id="seoul" onclick="clickCity(this)">Seoul</a></li>
+        <li><a id="busan" onclick="clickCity(this)">Busan</a></li>
+        <li><a id="paris" onclick="clickCity(this)">Paris</a></li>
+    </ul>
+    <img src="../image/홈.jpg" alt="home" id="cityImg">
+
+    <script>
+        const clickCity=(elem)=>{
+            console.log(elem);
+            let idVal=elem.id;
+            document.getElementById('cityImg').src= `../image/${idVal}.jpg`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+</head>
+<body>
+    <h3>데이터 리스트</h3>
+    <ol>
+        <li>이름</li>
+        <li>거주지</li>
+        <li>좋아하는 리스트3가지
+            <ul>
+                <li>☆</li>
+                <li>☆</li>
+                <li>☆</li>
+            </ul>
+        </li>
+        <li>이메일</li>
+        <li>지금 가장 원하는 것</li>
+    </ol>
+    <h3>리스트의 구조에 따라 자바스크립트 객체를 만들어 보자</h3>
+    <form action="">
+        이름 : <input type="text" id="name"><br>
+        거주지 : <input type="text" id="addr"><br>
+        좋아하는 리스트 <br>
+        리스트1 : <input type="text" id="favor1"><br>
+        리스트2 : <input type="text" id="favor2"><br>
+        리스트3 : <input type="text" id="favor3"><br>
+        이메일 : <input type="text" id="email"><br>
+        지금 가장 원하는 것 : <input type="text" id="wanna"><br>
+        <button type="button" onclick="clickEvent()">객체로 전송</button>
+    </form>
+
+    <!-- 테이블 생성 -->
+    <h3>전송받은 데이터 출력</h3>
+    <form action="">
+        <button type="button" onclick="clickEvent2()">출력</button>
+        <table border="1px" width="10%" id="printList">
+        
+        </table>
+    </form>
+
+    <script>
+        function clickEvent(){
+            const dataObj={
+                name: document.getElementById(`name`).value,
+                addr: document.getElementById(`addr`).value,
+                favors:{
+                    favor1: document.getElementById(`favor1`).value,
+                    favor2: document.getElementById(`favor2`).value,
+                    favor3: document.getElementById(`favor3`).value
+                },
+                email: document.getElementById(`email`).value,
+                wanna: document.getElementById(`wanna`).value
+            };
+            console.log(dataObj);
+            //만들어진 객체를 테이블에 출력
+        }
+        function clickEvent2(){
+            let name=document.getElementById(`name`).value;
+            let addr=document.getElementById(`addr`).value;
+            let favor1=document.getElementById(`favor1`).value;
+            let favor2=document.getElementById(`favor2`).value;
+            let favor3=document.getElementById(`favor3`).value;
+            let email=document.getElementById(`email`).value;
+            let wanna=document.getElementById(`wanna`).value;
+
+            let table=`
+            <tr>
+                <th>이름</th>
+                <td>${name}</td>
+            </tr>
+            <tr>
+                <th>거주지</th>
+                <td>${addr}</td>
+            </tr>
+            <tr>
+                <th>좋아하는 리스트</th>
+                <td>
+                    <ul>
+                        <li>${favor1}</li>
+                        <li>${favor2}</li>
+                        <li>${favor3}</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+                <td>${email}</td>
+            </tr>
+            <tr>
+                <th>지금 가장 원하는 것</th>
+                <td>${wanna}</td>
+            </tr>`;
+            document.getElementById(`printList`).innerHTML=table;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box속성</title>
+    <!-- 
+        width : 가로길이
+        box-sizing : box의 크기를 결정하는 속성
+        box-sizing에 따라 width의 길이가 contents의 가로가 될 수도 있고, box 전체의 가로가 될 수도 있음
+        - boder-box => width=content+padding(left+right)+border(left+right)
+        - content-box => width=content
+        ex. width:100px , padding : 5px , border : 1px
+            => border-box = 88px(내 컨텐츠) + 5px + 5px + 1px + 1px = 100px
+               content-box = 100px + 5px + 5px + 1px + 1px = 112px
+     -->
+     <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            padding: 5px;
+            box-sizing: border-box;
+            background-color: blue;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            padding: 5px;
+            box-sizing: content-box;
+            background-color: blueviolet;
+        }
+     </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lotto생성</title>
+</head>
+<body>
+    <h1>
+        1~45까지 중복되지 않게 숫자 6개를 랜덤으로 추출 => 출력
+        set객체를 사용하여 생성
+    </h1>
+    <button type="button" onclick="lottoNum()">랜덤번호 6자리 생성(출력)</button>
+    <h1 id="printLotto">로또 번호 출력</h1>
+    <button type="button" onclick="comNum()">당첨번호 7자리(마지막 번호는 보너스 번호) 생성(출력)</button>
+    <h1 id="printCom">당첨 번호 출력</h1>
+    <button type="button" onclick="compare()">결과 확인</button>
+    <h1 id="result">당첨 여부 출력</h1>
+
+    <script>
+        const lotto=new Set();
+        const num=new Set();
+        function lottoNum(){
+            document.getElementById('printLotto').innerText='';
+            lotto.clear();
+            while(lotto.size<6){
+                lotto.add(Math.floor(Math.random()*45)+1);
+            }
+            for(const iter of lotto){
+                document.getElementById('printLotto').innerText+=` ${iter}`;
+            }
+        }
+        function comNum(){
+            let cnt=0;
+            document.getElementById('printCom').innerText='';
+            num.clear();
+            while(num.size<7){
+                num.add(Math.floor(Math.random()*45)+1);
+            }
+            for(const iter of num){
+                cnt++;
+                if(cnt==7){
+                    document.getElementById('printCom').innerText+=` [${iter}]`;
+                    break;
+                }
+                document.getElementById('printCom').innerText+=` ${iter}`;
+            }
+        }
+        function compare(){
+            let cnt=0;
+            let cnt1=0;
+            let scd=false;
+            for(const iter of num){
+                cnt1++;
+                for(const iter2 of lotto){
+                    if(cnt1==7){
+                        if(iter==iter2){
+                            scd=true;
+                        }
+                    } else {
+                        if(iter==iter2){
+                            cnt++;
+                        }
+                    }
+                }
+                
+            }
+            if(cnt==6){
+                document.getElementById('result').innerText=`1등 당첨!!`;
+            } else if(cnt==5&&scd){
+                document.getElementById('result').innerText=`2등 당첨!!`;
+            }
+            else if(cnt==5){
+                document.getElementById('result').innerText=`3등 당첨!!`;
+            } else if (cnt==4){
+                document.getElementById('result').innerText=`4등 당첨!!`;
+            } else if(cnt==3){
+                document.getElementById('result').innerText=`5등 당첨!!`;
+            } else {
+                document.getElementById('result').innerText=`낙첨 ㅠㅠ`;
+            }
+            console.log(cnt,scd);
+        }
+
+    </script>
+    
+</body>
+</html>

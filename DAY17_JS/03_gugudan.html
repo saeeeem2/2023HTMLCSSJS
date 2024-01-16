@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        <button type="button" id="startBtn">문제 출제</button>
+    </h1>
+    <ol id="q"></ol>
+    <h1><button type="button" id="compareBtn">정답확인</button></h1>
+    <h3 id="printRatio"></h3>
+    <script>
+        function makeRandomDan(){
+            return Math.floor(Math.random()*8)+2;
+        }
+        function makeRandomIncre(){
+            return Math.floor(Math.random()*9)+1;
+        }
+        let quizArea=document.getElementById('q');
+        const ansObj={};
+        let count=0;
+        document.getElementById('startBtn').addEventListener('click',()=>{
+            //문제가 출제되는 부분
+            quizArea.innerHTML='';//지난 문제 제거
+            do{
+                count++;//1부터 시작
+                let dan=makeRandomDan();
+                let incre=makeRandomIncre();
+                let answer=dan*incre;
+                ansObj[`ans${count}`]=answer; //object에 추가
+                //q영역에 뿌리기
+                let quiz = `<li>${dan}*${incre}=`;
+                    quis +=`<input type="text" id="userAns${count}"></li>`;
+                    quizArea.innerHTML +=quiz;
+            } while(count<10);
+            console.log(ansObj);
+            count=0;
+        });
+
+        let correct=0; //정답 개수
+        document.getElementById('compareBtn').addEventListener('click',()=>{
+            //정답이 나오는 부분
+            while(count<10){
+                count++;
+                let userInput=document.getElementById(`userAns${count}`); //각 번지의 사용자 정답
+                if(Number(erInput.value)===ansObj[`ans${count}`]){ //===세개면 타입도 같아야함
+                    correct++;
+                    userInput.value+=" : 정답";
+                    userInput.style.backgroundColor="green";
+            } else {
+                userInput.value +=" : 오답";
+                userInput.style.backgroundColor="red";
+            }
+        }
+        document.getElementById('printRatio').innerText=`정답률`;
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+div{
+    width: 100%;
+}
+.header{
+    height: 60px;
+    background-color: azure;
+    font-size: 20px;
+    line-height: 60px;
+    padding-left: 40px;
+    font-weight: bold;
+}
+/* media query변경내용 */
+.main-image{
+    height: 300px;
+    background-image: url(../image/배경.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.description{
+    height: 300px;
+    background-color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+.description>p:first-child{
+    font-size: 16px;
+    font-weight: 700;
+    color: gray;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.description>p:nth-child(2){
+    font-size: 20px;
+    font-weight: 700;
+}
+.description>p:last-child{
+    font-size: 16px;
+}
+.sub-image{
+    height: 350px;
+    background-image: url(../image/배경2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.sub-image2{
+    height: 200px;
+    background-image: url(../image/야경.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    line-height: 200px;
+}
+.sub-image2>a{
+    border: 4px solid white;
+    padding: 10px 40px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+.sub-image3{
+    height: 200px;
+    background-image: url(../image/야경2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@media screen and (min-width:800px) {
+    .main-image{
+    height: 500px;
+    }
+    .description{
+    height: 300px;
+    background-color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+.description>p:first-child{
+    font-size: 16px;
+    font-weight: 700;
+    color: gray;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.description>p:nth-child(2){
+    font-size: 20px;
+    font-weight: 700;
+}
+.description>p:last-child{
+    font-size: 16px;
+}
+.sub-image{
+    width: 50%;
+    height: 300px;
+    float: left;
+    background-image: url(../image/배경2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.sub-image2{
+    width: 50%;
+    height: 150px;
+    float: right;
+    background-image: url(../image/야경.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    line-height: 200px;
+}
+.sub-image2>a{
+    border: 4px solid white;
+    padding: 10px 40px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+.sub-image3{
+    width: 50%;
+    height: 150px;
+    float: right;
+    background-image: url(../image/야경2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+}
+
+@media screen and (min-width:1200px) {
+    .main-image{
+        width: 50%;
+        float: left;
+        height: 600px;
+    }
+    .description{
+        width: 50%;
+        height: 300px;
+        float: right;
+        background-color: white;
+        padding-left: 40px;
+        box-sizing: border-box;
+    }
+    .description>p:first-child{
+        font-size: 16px;
+        font-weight: 700;
+        color: gray;
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+    .description>p:nth-child(2){
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .description>p:last-child{
+        font-size: 16px;
+    }
+    .sub-image{
+        width: 25%;
+        height: 300px;
+        float: left;
+        background-image: url(../image/배경2.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+
+    }
+    .sub-image2{
+        width: 25%;
+        height: 150px;
+        float: right;
+        background-image: url(../image/야경.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+        line-height: 150px;
+    }
+    .sub-image2>a{
+        border: 4px solid white;
+        padding: 10px 40px;
+        font-size: 16px;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    .sub-image3{
+        width: 25%;
+        height: 150px;
+        float: right;
+        background-image: url(../image/야경2.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}

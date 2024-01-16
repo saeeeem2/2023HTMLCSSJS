@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제</title>
+    <!-- 
+        div 3개 생성
+        naver, google, daum 사이트로 연결(새창으로 연결)되게 하고, 각각의 div의 색과 모양을 달리하여 스타일을 적용
+        링크의 색상도 변경
+        
+        ul태그에 li태그 10개 추가 후 1~10까지 값을 쓰고,
+        짝수 : 빨간색
+        369 : 초록색
+        1 10 : 굵게
+        각 요소의 뒤에 .을 추가
+     -->
+     <style>
+        div{
+            width: 100px;
+            height: 30px;
+            border: 1px solid black;
+        }
+        a{
+            text-decoration: none;
+        }
+        a.naver{
+            color: green;
+            background-color: beige;
+        }
+        a.google{
+            color: red;
+            background-color: beige;
+        }
+        a.daum{
+            color: blue;
+            background-color: beige;
+        }
+        a.active{
+            color: black;
+        }
+        a.visited{
+            color: blueviolet;
+        }
+        ul>li{
+            list-style: none;
+            display: inline;
+            margin-left: 20px;
+        }
+        li:nth-child(even){
+            color: red;
+        }
+        li:nth-child(3n){
+            color: green;
+        }
+        li:first-child{
+            font-weight: bold;
+        }
+        li:last-child{
+            font-weight: bold;
+        }
+        li::after{
+            content: ".";
+        }
+        
+       
+
+     </style>
+</head>
+<body>
+    <div>
+        <a href="http://naver.com" target="_blank" class="naver">네이버</a>
+    </div>
+    <div>
+        <a href="http://google.com" target="_blank" class="google">구글</a>
+    </div>
+    <div>
+        <a href="http://daum.net" target="_blank" class="daum">다음</a>
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+</body>
+</html>

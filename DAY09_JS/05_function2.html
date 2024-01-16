@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>함수의 파라미터/ 리턴타입사용</h1>
+    <ul>
+        <li> 파라미터의 개수는 제한이 없으나 많으면 관리가 힘듦</li>
+        <li> 파라미터 타입은 제한이 없음. 전달된 타입을 그대로 받아서 사용</li>
+        <li> 파라미터명은 외부 변수명과 같아도 상관없고 달라도 상관없음</li>
+        <li> return유무에 따라 값을 리턴받을 수 있고 종료시점도 결정</li>
+    </ul>
+    <script>
+        let myName='황새미';
+
+        function callName(name){
+            let hisName='이동혁'
+
+            //function외부에서 선언된 변수 사용 여부
+            console.log('여자친구 이름은 '+myName); 
+            console.log('남자친구 이름은 '+hisName);
+            console.log('그냥 친구 이름은 '+name);
+        }
+
+        callName('해찬');
+        //function내부 변수를 외부에서 사용가능한지 여부=>불가능
+        //console.log(hisName);//사용불가
+
+        console.log('------------------------------------------------------------------');
+
+        //매개변수 2개를 받아서 두 수의 합을 리턴
+        function returnSum(num1, num2){
+            return num1+num2;
+        }
+        //리턴을 받을 변수가 필요
+        sum=returnSum(10,20);
+        console.log('두 수의 합 : '+sum);
+        console.log(`sum : ${returnSum(100,200)}`);
+        
+        //표현식 함수
+        const myFunc=function(myName){
+            console.log('myName');
+            return "hello~~"+myName;
+        }
+        
+        let funResult=myFunc('이동혁');
+        console.log(funResult);
+        
+        //화살표 함수(Arrow Function) : 코드량을 줄이기 위해 사용
+        const arrowFunc=(param1, param2)=>{
+            return param1+param2;
+        }
+        let arrowResult=arrowFunc(10,20);
+        console.log(arrowResul);
+
+        const arrFunc2=(p1,p2)=>p1+p2;
+        console.log(arrFunc2(1,2));
+
+        const arrfunc3 = (p1,p2) => {
+            console.log("arrFunc3 result"+(p1,p2));
+        }
+        arrfunc3(100,200);
+
+    </script>
+</body>
+</html>

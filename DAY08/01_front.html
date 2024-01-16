@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 기본 태그들이 가지고 있는 고유의 속성들을 없애주는 코드 */
+        @import url(reset.css);
+        .container{
+            /* 부모기준 100% */
+            width: 100%;
+            /* vh/vw : v(브라우저), 모니터(브라우저)의 높이 기준 */
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.8)),url(../image/배경2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container header{
+            width: 90%;
+            height: 50px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .container header a{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        /* 이렇게해도 되고 flex써도 되고 */
+        /* .container header h1{
+            float: left;
+        }
+        .container header .nav{
+            float: right;
+        } */
+        .container header .nav ul{
+            display: flex;
+            justify-content: space-between;
+        }
+        .container header .nav ul li{
+            margin: 0 10px;
+        }
+        .container header .nav ul li a{
+            font-size: 15px;
+        }
+        .container header .nav ul li a:hover{
+            color: darkgoldenrod;
+        }
+        .main{
+            /* 전체 브라우저의 가운데 정렬 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+        .main h2{
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+        .main button{
+            border: 2px solid green;
+            font-size: 25px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 700;
+            color: white;
+            cursor: pointer;
+            /* 배경색을 부모색으로 */
+            background-color: transparent;
+            transition: 0.5s;
+        }
+        .main button:hover{
+            background-color: rgba(211, 251, 211, 0.567);
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="">DESIGN</a></h1>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">SIGNUP</a></li>
+                    <li><a href="#">BOARD</a></li>
+                </ul> 
+            </div>
+        </header>
+        <div class="main">
+            <h2>Welcome to Front-End World</h2>
+            <a href="03_shop.html"><button> Learn More</button></a>
+        </div>
+    </div>
+</body>
+</html>

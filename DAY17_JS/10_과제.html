@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0 auto;
+        margin-top: 200px;
+        width: 500px;
+        text-align: center;
+    }
+    div>form{
+        background-color: rgb(222, 253, 253);
+        height: 50px;
+        text-align: center;
+        padding-top: 20px;
+    }
+   div>ul>div:nth-child(even){
+    background-color: rgb(240, 221, 252);
+   }
+   div>ul>div:hover{
+    background-color: azure;
+   }
+   .delete{
+    border: none;
+   }
+</style>
+<body>
+    <div>
+        <h2>여행 준비물 점검 목록</h2>
+        <form action="">
+            <input type="text" id="item">
+            <button type="button" id="btn" onclick="addList()">추가</button>
+        </form>
+        <div><ul id="itemList"></ul></div>
+    </div>
+    <script>
+        let item='';
+        // let items= new Array();
+        // let cnt=0;
+        function addList(item){
+            item=document.getElementById('item').value;
+            document.getElementById('itemList').innerHTML+=`<div>${item} <button type=button id="delete" onclick="div.remove()">X</button></div>`;
+            // items[cnt]=items.value;
+            // cnt++;
+        }
+        function deleteList(){
+            div.re
+        }
+    </script>
+</body>
+</html>

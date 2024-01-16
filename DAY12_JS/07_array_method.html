@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열관련 메서드도</title>
+</head>
+<body>
+    <h1>배열관련 메서드 : 유사배열에서는 사용제한이 되는 메서드도 있음</h1>
+    <ul>
+        <li>
+            array.push(value) : 배열의 마지막에 value를 추가하여 배열의 길이를 리턴
+            => array[array.length]=value; 같은 의미
+            리턴 : 배열의 길이를 리턴
+        </li>
+        <li>
+            pop() : 배열의 마지막 요소를 제거
+            리턴 : 배열의 마지막 요소를 리턴
+        </li>
+        <li>
+            shift() : 배열의 첫 요소를 제거 후 값을 리턴
+            => pop()과 비슷, 위치가 반대
+        </li>
+        <li>
+            unshift(value) : 배열의 첫 요소로 추가 => 길이를 리턴
+        </li>
+        <li>
+            join(value) : 배열 원소 사이에 문자를 삽입하여 새로운 문자열을 생성
+            리턴 : 문자열
+        </li>
+    </ul>
+    <script>
+        const outClass=[];
+        outClass[outClass.length]='이동혁';
+        outClass[outClass.length]='이해찬';
+        outClass[outClass.length]='이민형';
+        outClass[outClass.length]='이마크';
+        console.log(outClass);
+        console.log(outClass.push('나재민'));
+        console.log(outClass);
+        console.log(outClass.pop());
+        console.log(outClass);
+        console.log(outClass.unshift('김정우'));
+        console.log(outClass);
+        console.log(outClass.shift());
+        console.log(outClass);
+        console.log(outClass.join("/"));//배열을 특정 값을 넣어 문자열로 리턴
+        let str=outClass.join("/");
+        console.log(str.split("/")); //문자열을 특정 값을 기준으로 나눠서 배열로 리턴
+    </script>
+</body>
+</html>

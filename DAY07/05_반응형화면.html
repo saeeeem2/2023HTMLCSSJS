@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: Black_Han_Sans;
+            src: url(../font/Black_Han_Sans/BlackHanSans-Regular.ttf);
+        }
+        @font-face {
+            font-family: Nanum_Pen_Script;
+            src: url(../font/Nanum_Pen_Script/NanumPenScript-Regular.ttf);
+        }
+        @font-face {
+            font-family: Do_Hyeon;
+            src: url(../font/Do_Hyeon/DoHyeon-Regular.ttf);
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .main-img{
+            width: 50%;
+            height: 500px;
+            background-image: url(../image/배경2.jpg);
+            float: left;
+        }
+        .content{
+            width: 50%;
+            height: 250px;
+            font-family: Do_Hyeon;
+            float: right;
+            
+        }
+        .p{
+            margin: 20px 40px 0px 40px;
+        }
+        .content>p:first-child{
+            color: darksalmon;
+            font-size: 13px;
+        }
+        .content>p:nth-child(2){
+            font-weight: bold;
+            font-size: 25px;
+        }
+        .content>p:last-child{
+            font-size: 18px;
+            
+        }
+        .img1{
+            width: 25%;
+            height: 250px;
+            background-size: 100% 100%;
+            background-image: url(../image/야경.jpg);
+            float: left;
+            
+        }
+        .img2{
+            float: right;
+            width: 25%;
+            height: 125px;
+            background-size: 100% 100%;
+            background-image: url(../image/배경.jpg);
+        }
+        .img3{
+            float: right;
+            width: 25%;
+            height: 125px;
+            background-size: 100% 100%;
+            background-image: url(../image/야경2.jpg);
+        }
+        @media screen and (max-width : 1200px) {
+            .main-img{
+                width: 100%;
+                height: 500px;
+                background-image: url(../image/배경2.jpg);
+                background-size: 100% 100%;
+            }
+            .content{
+                width: 100%;
+                height: 250px;
+                font-family: Do_Hyeon;
+            }
+            .img1{
+                width: 50%;
+                height: 250px;
+                background-size: 100% 100%;
+                background-image: url(../image/야경.jpg);
+                float: left;
+            }
+            .img2{
+                width: 50%;
+                height: 125px;
+                background-size: 100% 100%;
+                background-image: url(../image/배경.jpg);
+                float: right;
+            }
+            .img3{
+                width: 50%;
+                height: 125px;
+                background-size: 100% 100%;
+                float: right;
+                background-image: url(../image/야경2.jpg);
+            }
+        }
+        @media screen and (max-width : 800px) {
+
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3>IN'O</h3>
+    </div>
+    <div class="main-img"></div>
+    <div class="content">
+        <p>Portfolio</p>
+        <p>Make Hardware Soft</p>
+        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also</p>
+    </div>
+    <div class="img1"></div>
+    <div class="img2">
+    </div>
+    <div class="img3"></div>
+</body>
+</html>

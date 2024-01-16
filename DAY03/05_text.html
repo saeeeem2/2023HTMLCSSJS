@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text속성</title>
+    <!-- 
+        text속성
+        text-align : 정렬(left,right,center,justify(양쪽))
+        text-indent : 들여쓰기
+        text-decoration : 줄긋기
+            - none 줄 없음
+            - underline 밑줄
+            - overline 윗줄
+            - line-through 가운데줄
+        letter-spacing : 글자간 간격
+        line-height : 글자 기준선 높이
+        word-spacing : 단어간 간격
+        text-shadow : 그림자
+        - text-shdow : 좌측 px 상단 px 번짐정도 px 색상
+        - 중첩(멀티) 효과, (콤마)로 계속 이어나갈 수 있음
+        white-space : 컨텐츠 감싸기 여부 방법
+            - wrap : 여러줄 그대로 두기
+            - nowrap : 한줄로 처리
+        text-overflow : 텍스트가 범위를 넘어가는 경우
+            - ellipsis(...)
+        overplow : 요소가 넘어가면 어떻게 처리할 것인지를 정하는 속성
+            - hidden : 숨김
+            - scroll : 스크롤생성
+            - auto : 스크롤 오토 생성
+     -->
+     <!-- 
+        css표준단위
+        em : 배수, 부모값을 기준으로 배수
+        rem : 배수, 문서의 값을 기준으로 배수
+        % : 퍼센트, 현재값을 기준으로 %
+        px : 픽셀
+        cm / mm / in lin => 96px
+        pt : 포인터 1pt=1/72 in
+        pc : 피카소 1pc=12pt
+        deg : 각도
+      -->
+     <style>
+        div{
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 50px;
+            word-spacing: 10px;
+            text-shadow: 5px 5px 3px green;
+        }
+        p{
+            text-indent: 20px;
+        }
+        .line{
+            text-overflow: ellipsis;
+            white-space-collapse: nowrap;
+            overflow: hidden;
+        }
+     </style>
+
+</head>
+<body>
+    <div>hello word</div>
+    <p class="line">
+        What is Lorem Ipsum?
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+</body>
+</html>

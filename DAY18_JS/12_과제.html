@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>컴퓨터가 0~9의 중복되지 않는 정수 3개를 랜덤으로 출제하면 맞추는 게임</h1>
+    <h2>게임 규칙</h2>
+    <ol>
+        <li>
+            세 자리의 숫자는 각 자리수를 갖고 서로 중복되지 않는다.
+        </li>
+        <li>
+            각 자리수와 입력한 숫자의 자리수가 동일하면 1Strike(스트라이크)
+        </li>
+        <li>
+            입력한 숫자가 포함되어 있으나 자리수가 동일하지 않으면 1Ball(볼)
+        </li>
+        <li>
+            입력한 숫자가 전혀 포함되어 있지 않으면 Out(아웃)
+        </li>
+        <li>
+            3스트라이크이면 1게임 종료
+        </li>
+        <li>
+            플레이 예시 <br>
+            컴숫자(4,2,9) > 내 추측 숫자(4,1,7) > 1S<br>
+            컴숫자(4,2,9) > 내 추측 숫자(4,9,1) > 1S, 1B
+        </li>
+    </ol>
+    <button type="button" id="start">게임시작</button>
+    <h1 id="h1"></h1>
+    숫자 추측하기 : <input type="text" id="userNum">
+    <button type="button" id="check">추측 확인</button>
+    <h3 id="result"></h3>
+
+    <script>
+        // let comNum=0;
+        let comSet=new Set();
+        let userSet=new Set();
+        document.getElementById('start').addEventListener('click',()=>{
+            for(let i=0; i<3; i++){
+                comNum=Math.floor(Math.random()*9);
+                comSet.add(comNum);
+            }
+            document.getElementById('h1').innerText=`컴퓨터가 숫자를 정하였습니다.`;
+            console.log(comSet);
+        })
+
+        document.getElementById('check').addEventListener('click',(e)=>{
+            let num=document.getElementById('userNum');
+            if(isNaN(num.value)){
+                document.getElementById('result').innerText=`잘못된 입력값입니다.`;
+            }
+            userSet.add(num);
+            console.log(userSet);
+
+
+        })
+    </script>
+</body>
+</html>

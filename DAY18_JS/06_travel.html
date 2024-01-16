@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    #travel{
+        width: 200px;
+        border: 4px solid black;
+        margin-left: 50%;
+        padding-left: 10px;
+        transform: translate(-50%);
+        font-size: 50px;
+        font-weight: bold;
+    }
+    .menu{
+        left: 50%;
+        top: 15%;
+        position: absolute;
+        transform: translate(-50%);
+        
+    }
+
+    .menu p{
+        text-decoration: none;
+        margin: 10px 30px;
+        float: left;
+        color: black;
+        font-weight: 700; 
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p id="travel">TRAVEL</p>
+        </div>
+        <div class="menu">
+            <p id="home">Home</p>
+            <p id="seoul">Seoul</p>
+            <p id="busan">Busan</p>
+            <p id="paris">Paris</p>
+        </div>
+        <div id="img"></div>
+    </div>
+
+    <script>
+        document.getElementById('home').addEventListener('click',()=>{
+            document.getElementById('img').innerHTML=`<img src="../image/홈.jpg" alt="">`;
+        })
+        document.getElementById('seoul').addEventListener('click',()=>{
+            document.getElementById('img').innerHTML=`<img src="../image/서울.jpg" alt="">`;
+        })
+        document.getElementById('busan').addEventListener('click',()=>{
+            document.getElementById('img').innerHTML=`<img src="../image/부산.jpg" alt="">`;
+        })
+        document.getElementById('paris').addEventListener('click',()=>{
+            document.getElementById('img').innerHTML=`<img src="../image/파리.jpg" alt="">`;
+        })
+    </script>
+</body>
+</html>

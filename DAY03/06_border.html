@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border속성</title>
+    <!-- 
+        테두리 속성(border)
+        border : 두께 스타일 색상
+        border-width : 테두리 두깨
+        border-color : 테두리 색상
+        boder-style : 테두리 모양
+        border-radius : 테두리 둥글기
+     -->
+     <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            text-align: cenger;
+            padding-top: 20px;
+            box-sizing:border-box;
+            border: 1px solid black;
+            border-bottom-style: none;
+            box-shadow: 5px 5px 5px gray;
+        }
+        div:last-of-type{
+            border-bottom-style: solid;
+        }
+
+     </style>
+</head>
+<body>
+    <div class="box">
+        hello
+    </div>
+</body>
+</html>

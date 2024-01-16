@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>성적확인</legend>
+            이름 : <input type="text" id="name"><br>
+            국어 : <input type="text" id="kor"><br>
+            영어 : <input type="text" id="eng"><br>
+            수학 : <input type="text" id="math"><br>
+        
+            <button type="button" onclick="clickEvent()">성적계산</button>
+        </fieldset>
+    </form>
+    <!-- 이름 : 합계 : 평균 :  -->
+    <h3 id="sum"></h3>
+
+    <script>
+        function clickEvent(){
+            let name=document.getElementById(`name`).value;
+            let kor=parseInt(document.getElementById(`kor`).value);
+            let eng=parseInt(document.getElementById(`eng`).value);
+            let math=parseInt(document.getElementById(`math`).value);
+
+            let total=kor+eng+math;
+            let avg=Math.round(total/3);
+            let str='';
+            if(avg>=60){
+                str="pass";
+            } else {
+                str="fail";
+            }
+            
+            let sum=document.getElementById(`sum`);
+
+            if(kor>100||eng>100||math>100||kor<0||eng<0||math<0){
+                alert('잘못된 점수입니다.')
+                document.getElementById(`kor`).value='';
+                document.getElementById(`eng`).value='';
+                document.getElementById(`math`).value='';
+                sum.innerText='정확한 점수를 입력해주세요.';
+                return;
+            }
+            
+            sum.innerText=`이름 : ${name}  / 합계 : ${total} / 평균 : ${avg.toFixed(2)} / 합격여부 : ${str}`;         
+            
+        }
+    </script>
+</body>
+</html>

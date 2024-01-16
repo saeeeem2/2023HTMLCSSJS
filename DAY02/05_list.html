@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        list의 세가지 종류
+        1. 순서가 있는 리스트(ol)
+        2. 순서가 없는 리스트(ul)
+        3. 설명, 정의 리스트(dl)
+        ol/ul=>li태그로 목록을 구성, dl=>dt,dd 태그로 목록을 구성
+
+        <ol태그 속성>
+        - type : 순서를 정해주는 형태를 지정
+        - 1,A,a,i,I
+        - start : 시작값을 지정
+        <ul태그 속성>
+        - type : 구분 기호 모양을 정할 수 있음
+        - desc(기본),circle(속이 빈 동그라미),square(사각형)
+
+        리스트 태그는 리스트를 구성하는 것 뿐만 아니라 상/하위 구조로 나뉠 수 있는 상황에 주로 사용됨
+        - 메뉴바/서브메뉴 구성 시 많이 사용
+     -->
+     <ul type="square">
+        <li>아침</li>
+        <li>점심</li>
+        <li>저녁</li>
+        <li>야식</li>
+        <li>참</li>
+     </ul>
+     <ol type="I">
+        <li>아침</li>
+        <li>점심</li>
+        <li>저녁</li>
+        <li>야식</li>
+        <li>참</li>
+     </ol>
+     <ul>
+        <li>
+            <ol type="a">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </li>
+        <li>
+            <ol type="a">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </li>
+     </ul>
+     <dl>
+        <dt>정의1(타이틀)</dt>
+        <dd> - 정의1의 설명</dd>
+        <dt>정의2(타이틀)</dt>
+        <dd> - 정의2의 설명</dd>
+        <dt>정의3(타이틀)</dt>
+        <dd> - 정의3의 설명</dd>
+     </dl>
+     <!-- 리스트는 중첩될 수 있다 -->
+     <ul>
+        <li>HTML</li>
+            <ol>
+                <li>HTML Element</li>
+                <li>Attribute</li>
+                <li>link,img,list...</li>
+            </ol>
+        <li>CSS</li>
+            <ol>
+                <li>selector</li>
+                <li>layout</li>
+                <li>color</li>
+            </ol>
+        <li>JavaScript</li>
+            <dl>
+                <dt>java와 비슷</dt>
+                <dd>java처럼 구문을 활용하여 화면을 동적으로 제어</dd>
+            </dl>
+     </ul>
+</body>
+</html>

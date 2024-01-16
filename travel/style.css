@@ -1,0 +1,35 @@
+body{
+    text-align: center;
+}
+/* 
+    margin: 10px; => 상하좌우 전체 여백
+    margin: 10px 20px; => 상하 / 좌우 여백
+    margin: 10px 20px 10px => 상 / 좌우 / 하
+    margin: 10px 20px 50px 10px => 상 / 우 / 하 / 좌(시계방향)
+*/
+h1{
+    border: 5px solid black;
+    width: 300px;
+    padding: 10px;
+    /* 블록태그에만 가능하고 가운데 정렬할 때 사용하면 됨 */
+    margin: 10px auto 30px;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 30px;
+    width: 300px;
+}
+li{
+    display: inline;
+    margin: 10px 10px;
+}
+a{
+    text-decoration: none;
+    font-size: large;
+    font-weight: 700;
+}
+img{
+    width: 50%;
+    height: 500px;
+}

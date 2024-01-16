@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        window 메서드 종류
+    </h1>
+    <ul>
+        <li>
+            window.open('url','window name','option(size,scroll..)');
+        </li>
+        <li>
+            alert(); : 경고창 띄움 / prompt(); input 포함 / confirm(); 확인/취소 창
+        </li>
+        <li>
+            setInterval(function, millseconds);
+            - 일정간격 지속적으로 실행문을 실행시킬 때 사용
+        </li>
+        <li>
+            setTimeout(function,millsecond);
+            - 일정시간동안 실행시킬 때 사용
+        </li>
+    </ul>
+    <button type="button" onclick="openWindow()">열기</button>
+    <button type="button" onclick="closeWindow()">닫기</button>
+    <button type="button" onclick="alertEx()">alert</button>
+    <button type="button" onclick="promptEx()">prompt</button>
+    <button type="button" onclick="confirmEx()">confirm</button>
+    <h3 id="msg"></h3>
+
+    <a href="06_setTimeOut.html">06_setTimeOut.html</a>
+
+    <script>
+        let myWindow;
+        function openWindow(){
+            myWindow=window.open("http://naver.com","mywindow","width=400, height=500");
+        }
+        function closeWindow(){
+            if(myWindow){
+                myWindow.close();
+            }
+        }
+        function alertEx(){
+            alert("alert연습~!");
+        }
+        function promptEx(){
+            let name = prompt('이름을 입력해주세요');
+            document.getElementById('msg').innerText=name;
+        }
+        function confirmEx(){
+            let con=confirm('confirm 연습~!');
+            if(con){
+                document.getElementById('msg').innerText="확인클릭";
+            } else{
+                document.getElementById('msg').innerText="취소클릭";
+            }  
+        }
+    </script>
+</body>
+</html>

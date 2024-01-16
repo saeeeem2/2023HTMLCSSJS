@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event-input</title>
+</head>
+<body>
+    <h1>
+        form태그를 통해 데이터 받아오기
+    </h1>
+    <ul>
+        <li>
+            input, textarea, select, html element속성, 텍스트 데이터 받아오기
+        </li>
+        <li>
+            input tag는 value 속성으로 값이 매핑되어 있으므로 value값을 호출하면 input에 입력하는 값을 가져올 수 있음
+        </li>
+        <li>
+            select-option, radio, checkbox value값은 선택한 값을 가져오기 위해서는 별도의 value값을 추가하는 작업이 필요
+        </li>
+        <li>
+            value 속성의 값은 모두 string처리 됨
+        </li>
+        <li>
+            string처리된 value값을 숫자로 사용하기 위해서는 변환이 필요
+        </li>
+    </ul>
+    <form action="">
+        <fieldset>
+            <legend>이벤트를 활용한 데이터 전송</legend>
+            id : <input type="text" id="userid"><br>
+            pw : <input type="password" id="userpw"><br>
+            birth : <input type="date" id="birth"><br>
+            pin : <input type="number" id="pin"><br>
+            <button type="button" onclick="clickEventInput()">전송</button>
+            <button type="button" onclick="makeList()">리스트로 전송</button>
+        </fieldset>
+    </form>
+    <h3 id="info"></h3>
+    <ol id="ol">
+    </ol>
+    
+    <script>
+        let ol=document.getElementById(`ol`);
+        let userid=document.getElementById(`userid`);
+
+        function makeList(){
+
+            //string -> 숫자로 변경
+            //parseInt(변수=>정수로 변경(int형태로 변환)) //정수만 가능
+            //Number(변수=>숫자로 변경될 수 있는 값)
+            pin=parseInt(pin);
+
+            //ol태그에 li로 추가
+            let id=userid.value
+            let userpw=document.getElementById('userpw').value;
+            let birth=document.getElementById('birth').value;
+            let pin=document.getElementById('pin').value;
+
+            let ol=document.getElementById('ol');
+            ol.innerHTML=`<li>${id} type ${typeof id}</li>`;
+            ol.innerHTML+=`<li>${userpw} type ${typeof userpw}</li>`;
+            ol.innerHTML+=`<li>${birth} type ${typeof birth}</li>`;
+            ol.innerHTML+=`<li>${pin} type ${typeof pin}</li>`;
+
+        }
+        function clickEventInput(){
+            //화면에 입력한 값을 받아오는 과정
+            //1. 화면에 그 값이 있어야 한다
+            //2. 저장 공간이 있어야 한다
+            
+            let userid=document.getElementById('userid').value;
+            let userpw=document.getElementById('userpw').value;
+            let birth=document.getElementById('birth').value;
+            let pin=document.getElementById('pin').value;
+            // console.log(`id : ${userid}, pw : ${userpw}, birth : ${birth}, pin : ${pin}`)
+            // console.log(userid);
+            // console.log(userpw);
+            // console.log(birth);
+            // console.log(pin);
+
+            // h3태그에 출력
+            let info=document.getElementById('info');
+            info.innerText=`userid : ${userid}`; //덮어 씌워짐
+            info.innerText+=`userpw : ${userpw}`; //+=으로 써야 더해짐
+            info.innerText+=`birth : ${birth}`;
+            info.innerText+=`pin : ${pin}`;
+
+            // let str =`userpw : ${userpw}`; //+=으로 써야 더해짐
+            // str+=`birth : ${birth}`;
+            // str+=`pin : ${pin}`;
+            // inpo.innerText=str;
+        }
+    </script>
+</body>
+</html>

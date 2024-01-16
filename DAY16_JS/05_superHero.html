@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: Black_Han_Sans;
+            src: url(../font/Black_Han_Sans/BlackHanSans-Regular.ttf);
+        }
+        @font-face {
+            font-family: Nanum_Pen_Script;
+            src: url(../font/Nanum_Pen_Script/NanumPenScript-Regular.ttf);
+        }
+        @font-face {
+            font-family: Do_Hyeon;
+            src: url(../font/Do_Hyeon/DoHyeon-Regular.ttf);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+    </header>
+    <section>
+    </section>
+    
+    <script>
+        const section = document.querySelector("section");
+        const header = document.querySelector("header");
+        
+        async function header(){
+            fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+            .then(resp=>resp.json())
+            .then(result=>printDate(result)) //성공시
+            .catch(err=>console.log(err)) //실패시
+        }
+
+        function printDate(ogj){
+            header.innerHTML=`<li>Super Hero Squad</li>`;
+        }
+    </script>
+</body>
+</html>

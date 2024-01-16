@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+    <style>
+        body{
+            background-color: rgb(57, 186, 139);
+        }
+        .outer{
+            background-color: rgb(248, 241, 231);
+            width: 500px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 5px;
+            position: absolute;
+
+        }
+        .ID{
+            width: 400px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+            position: absolute;
+            top: 10%;
+            left: 10%; 
+        }
+        .PW{
+            width: 400px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+            position: absolute;
+            top: 35%;
+            left: 10%;
+        }
+        button{
+            width: 400px;
+            height: 30px;
+            background-color: rgb(57, 186, 139);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            position: absolute;
+            top: 60%;
+            left: 10%;
+        }
+        a{
+            color: gray;
+            position: absolute;
+            top: 85%;
+            left: 30%;
+        }
+    </style>
+
+</head>
+<body>
+    <form action="">
+        <div class="outer">
+            <input type="text" name="ID" class="ID" placeholder="아이디">
+            <input type="password" name="PW" class="PW" placeholder="비밀번호">
+            <button>로그인</button>
+            <a href="#"><ins>비밀번호를 잊어버리셨나요?</ins></a>
+        </div>
+    </form>
+    
+</body>
+</html>

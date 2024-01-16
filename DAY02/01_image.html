@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img태그</title>
+</head>
+<body>
+    <!-- 
+        img 태그
+        - src : 그림의 경로
+        - alt : 그림이 없을 때 나타내는 문자
+        - width : 그림의 가로 넓이 
+        - height : 그림의 세로 길이 
+        - 이미지의 사이즈 : 숫자 => pixel단위로 적용 / %로 적용도 가능
+     -->
+     <!-- 
+        html문서에서 사용되는 이미지 포맷은 jpg(jpeg), png가 대표적
+        jpg : 손실 압축 포맷 => 이미지의 해상도가 손생되어도 용량을 많이 줄일 수 있어 가장 많이 사용
+        png : 무손실 압축 포맷 => 이미지 해상도의 손실을 줄이고, 투명 배경 이미지를 사용할 필요성이 있을 때 사용, 용량은 크지만 화질이 뛰어남
+        
+        - 이미지 파일들은 파일의 헤더 영역에 image/jpeg, image/png 등의 형식을 가지고 있기 때문에 파일 확장자명과 관계없이 헤더 정보로 판단함
+        - 이미지의 리소스가 잘못된 정보값을 갖는 경우 : 엑박
+      -->
+      <!-- 
+        블럭복사 alt+shift+방향키
+       -->
+     <img src="../image/5.jpg" alt="fullsun" width="100" height="50">
+     <img src="../image/4.jpg" alt="해차니" width="10%" height="10%">
+</body>
+</html>

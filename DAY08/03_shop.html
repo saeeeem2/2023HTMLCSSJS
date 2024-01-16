@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple shop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        
+        @import url(reset.css);
+        @font-face {
+            font-family: Do_Hyeon;
+            src: url(../font/Do_Hyeon/DoHyeon-Regular.ttf);
+        }
+        body{
+            font-family: Do_hyeon;
+            /* 컨텐츠 보호를 위해 사용 */
+            min-width: 900px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .navbar{
+            height: 60px;
+            /* background-color: aqua; */
+            padding: 10px 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .navbar>a{
+            line-height: 60px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .navbar>ul{
+            display: flex;
+            justify-content: space-around;
+        }
+        .navbar>ul>li{
+            margin: auto 10px;
+        }
+        .main-img{
+            width: 100%;
+            height: 400px;
+            background-image: url(../image/배경2.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 20px 0;
+        }
+        .container>h1{
+            font-size: 30px;
+            text-align: center;
+            margin: 50px auto;
+            color: rgb(54, 53, 53);
+        }
+        .product{
+            /* 그림사이즈 230 마진 20*/
+            /* 230*3+120 */
+            width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .product>a{
+            margin: 0 20px;
+        }
+        .product>a>img{
+            width: 230px;
+            height: 230px;
+        }
+        .product ul{
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+        .product ul li{
+            margin: 10px;
+            font-size: 20px;
+        }
+        .footer{
+            text-align: center;
+            margin: 30px auto 50px;
+        }
+        .footer>i{
+            font-size: 30px;
+            padding: 0 30px;
+        }
+        .product a{
+            position: relative;
+        }
+        .product .text{
+            position: absolute;
+            top: 200px;
+            left: 85px;
+            color: crimson;
+            /* 화면에서 사라짐 */
+            display: none;
+        }
+        .product>a>div>img:hover ~.text{
+            display: block;
+        }
+        .product>a>div>img:hover{
+            transform: scale(1.1);
+        }
+        .product>a>div>img{
+            transition: transform 0.3s;
+        }
+        .product>a>div{
+            width: 230px;
+            height: 230px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="#">▒SIMPLE SHOP</a>
+            <ul>
+                <li><a href="#">Content</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+        <!-- 메인 이미지 -->
+        <div class="main-img"></div>
+        <!-- 중간 제목 -->
+        <h1>Our New Product</h1>
+        <!-- 상품 상세 -->
+        <div class="product">
+            <!-- 상품 정보 3*3 -->
+            <a href="#">
+                <div>
+                    <img src="../image/앨범사진1.jpg" alt="" width="100%" height="100%">
+                    <div class="text">세일상품</div>
+                </div>
+                <ul>
+                    <li>앨범</li>
+                    <li>49,000</li>
+                </ul>
+            </a>
+            <!-- 8개 복사 -->
+            <a href="#">
+                <div>
+                    <img src="../image/앨범사진1.jpg" alt="" width="100%" height="100%">
+                    <div class="text">세일상품</div>
+                </div>
+                <ul>
+                    <li>앨범</li>
+                    <li>49,000</li>
+                </ul>
+            </a>
+            <a href="#">
+                <div>
+                    <img src="../image/앨범사진1.jpg" alt="" width="100%" height="100%">
+                    <div class="text">세일상품</div>
+                </div>
+                <ul>
+                    <li>앨범</li>
+                    <li>49,000</li>
+                </ul>
+            </a>
+            <a href="#">
+                <img src="../image/앨범사진1.jpg" alt="">
+                <ul>
+                    <li>앨범</li>
+                    <li>49,000</li>
+                </ul>
+            </a>
+            <a href="#">
+                <img src="../image/앨범사진1.jpg" alt="">
+                <ul>
+                    <li>앨범</li>
+                    <li>49,000</li>
+                </ul>
+            </a>
+            <a href="#">
+                <img src="../image/앨범사진1.jpg" alt="">
+                <ul>
+                    <li>앨범</li>
+                    <li>49,000</li>
+                </ul>
+            </a>
+            <a href="#">
+                <img src="../image/앨범사진1.jpg" alt="">
+                <ul>
+                    <li>앨범</li>
+                    <li>49,000</li>
+                </ul>
+            </a>
+            <a href="#">
+                <img src="../image/앨범사진1.jpg" alt="">
+                <ul>
+                    <li>앨범</li>
+                    <li>49,000</li>
+                </ul>
+            </a>
+            <a href="#">
+                <img src="../image/앨범사진1.jpg" alt="">
+                <ul>
+                    <li>앨범</li>
+                    <li>49,000</li>
+                </ul>
+            </a>
+        </div>
+        <div class="footer">
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-apple"></i>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="area top">
+            <button type="button" value="7">7</button>
+            <button type="button" value="8">8</button>
+            <button type="button" value="9">9</button>
+            <button type="button" value="+" >+</button>
+            <button type="button" value="c">c</button><br>
+            <button type="button" value="4">4</button>
+            <button type="button" value="5">5</button>
+            <button type="button" value="6">6</button>
+            <button type="button" value="-">-</button><br>
+            <button type="button" value="1">1</button>
+            <button type="button" value="2">2</button>
+            <button type="button" value="3">3</button>
+            <button type="button" value="*">*</button><br>
+            <button type="button" value=".">.</button>
+            <button type="button" value="0">0</button>
+            <button type="button" value="=">=</button>
+            <button type="button" value="/">/</button>
+       </div>
+            <h1 id="printResult"></h1>
+    </div>
+    <script>
+        const print=document.getElementById('printResult');
+        let printValue='';
+
+        document.querySelector('.container').addEventListener('click',(e)=>{
+            console.log(e.target.value);
+            let btnValue=e.target.value;
+            //버튼값 체크
+            //숫자인지 아닌지 체크
+            if(!isNaN(btnValue)){//숫자일 경우
+                printValue+=btnValue;
+            }else{
+                //숫자가 아닐 경우(+,-,*,/) . = c undifined
+                if(btnValue!=undefined){
+                    switch(btnValue){
+                        case 'c' : 
+                            printValue=" "; //변수 안의 값을 지움
+                            print.innerText=" "; //그 전에 연산한 결과
+                        break;
+                        case '.' : 
+                            printValue+=btnValue; //기존값에 붙이기
+                        break;
+                        default : 
+                            let result=""; //사칙연산의 결과 변수 
+                            if(btnValue=="="){
+                                //클릭한 문자의 나열값을 파라미터로 전송하여 연산을 처리
+                                result=extractValue(printValue);
+                                printValue=result;
+                                btnValue="";
+                            } else{
+                                //값이 '='이 아닌 다른 연산자일 경우(+,-,*,/)
+                                printValue+=` ${btnValue} `; //양옆에 공백 포함하여 누적
+                            }
+                            console.log(printValue);
+                            break;
+                    }
+                }
+            }
+            print.innerText=printValue;
+        })
+
+        //연산의 결과를 리턴해 줄 함수
+        function operation(f, o, l){
+            let result = 0;
+            switch(o){
+                case '+': result = f+l; break;
+                case '-': result = f-l; break;
+                case '*': result = f*l; break;
+                case '/': result = f/l; break;
+                default: break;
+            }
+            return result.toFixed(2);
+        }
+
+
+        //연산을 하기 위한 값을 f,o,l로 구분해주는 함수
+        //연산자 앞 뒤에 공백을 삽입
+        function extractValue(strVal){
+            let firstNum = strVal.substring(0, strVal.indexOf(" "));
+            let op = strVal.substr(strVal.indexOf(" ")+1, 1); //1글자만 추출 
+            let lastNum = strVal.substring(strVal.lastIndexOf(" ")+1);
+            console.log(firstNum," > ", op," > ", lastNum);
+            return operation(Number(firstNum), op, Number(lastNum));
+        }
+        
+    </script>
+</body>
+</html>

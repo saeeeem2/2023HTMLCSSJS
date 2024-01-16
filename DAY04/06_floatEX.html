@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        p-box안에 box3개 구성
+        해당 3개 박스가 화면을 꽉차게 동일한 크기로 구성
+     -->
+     <style>
+        .pbox{
+            
+            border: 1px solid black;
+        }
+        .pbox::after{
+            content: "";
+            clear: both;
+            display: block;   
+        }
+        .box{
+            /* 자식 박스의 100% 기준은 부모 box
+               calc() 연산자를 붙여서 쓰면 올바를 작동을 안 할 수 있으니 띄어쓰기 하는 것을 권장 */
+            width: calc(100% / 3);
+            height: 100px;
+            float: left;
+        }
+        .pbox>div:first-child{
+            background-color: aquamarine;
+        }
+        .pbox>div:nth-child(2){
+            background-color: azure;
+        }
+        .pbox>div:last-child{
+            background-color: cornflowerblue;
+        }
+     </style>
+</head>
+<body>
+    <div class="pbox">
+        <div class="box">이동혁</div>
+        <div class="box">이해찬</div>
+        <div class="box">엔시티</div>
+    </div>
+    
+</body>
+</html>

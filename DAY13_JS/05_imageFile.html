@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+</head>
+<body>
+    <!-- 
+        input에 파일명. 확장자 형태로 입력하여 전송버튼을 클릭하면 이미지 파일인지 검사
+        이미지파일이면 '정상파일입니다.'(green)
+        아니면 '이미지파일만 가능합니다.'(red)
+        이미지 파일 : jpg, png, gif, jpeg => 대문자도 가능하도록
+     -->
+
+     <span>파일명 : </span>
+     <input type="text" id="fileName">
+     <button type="button" onclick="check()">전송</button>
+     <h1 id="result"></h1>
+
+     <script>
+        function check(){
+            let file = document.getElementById('fileName').value;
+            if(file.match(/(jpg|jpeg|png|gif)/i)){
+                document.getElementById('result').innerHTML=`<span class="s" style="color:green">정상파일입니다.</span>`;
+            } else{
+                document.getElementById('result').innerHTML=`<span class="s" style="color:red">이미지파일만 전송 가능합니다.</span>`;
+            }
+        }
+    
+     </script>
+
+</body>
+</html>

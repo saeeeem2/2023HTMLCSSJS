@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        모든 태그는 속성을 가질 수 있음
+        <태그명 속성="값" 속성="값"속성2>
+        속성은 ""가 중요함 속성1="값 속성2="값" => 따옴표가 안 맞으면 속성값이 잘못 설정됨
+        name : 서버로 데이터 전송시 변수명으로 사용되는 속성
+        value : 값, input태그의 값을 지정하는 역할
+        서버로 데이터 전송시에는 name=value 
+        id : 하나의 페이지에 하나만 허용(중복금지), 아이디가 중복되면 에러가 나는 것은 아니지만 올바른 작동을 하지않을 수 있음
+        class : css에서 구분자 역할을 하는 속성 / 한번에 여러개 지정 가능
+        class="a b c ab abc" => a, b, c, ab, abc
+        readonly : 읽기 전용, disabled : 비활성화
+        tabindex : 탭 순서를 정할 때 사용
+     -->
+     <form action="">
+        <input type="text" name="a" value="name" tabindex="1">
+        <input type="text" name="b" value="age" readonly tabindex="3">
+        <input type="text" name="c" tabindex="2">
+        <input type="text" name="d" placeholder="test" tabindex="4"> <br>
+        <!-- checked : checkbox, radio에서 사용하면 기본값으로 check가된 상태로 출력 -->
+        <input type="checkbox" name="e" checked> 선택 1
+        <input type="checkbox"> 선택 2
+        <input type="submit" value="submit">
+     </form>
+</body>
+</html>
